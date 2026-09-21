@@ -1,9 +1,4 @@
 {
-  "version": 2,
-  "name": "annapurna-developers",
-  "public": false,
-  "buildCommand": null,
-  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
