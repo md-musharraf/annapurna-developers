@@ -1,0 +1,35 @@
+# Vercel ignore file — exclude dev/tool files from deployment
+
+# Environment secrets — NEVER deploy
+.env
+.env.*
+*.env
+.env.local
+.env.production
+.env.development
+.env.example
+
+# OS & editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.bak
+*.swp
+.vscode/
+.idea/
+
+# Node modules (not needed for static deploy)
+node_modules/
+npm-debug.log*
+
+# Git internals
+.git/
+.gitignore
+
+# Dev build artifacts
+dist/
+build/
+.cache/
+
+# Gemini/AI workspace files
+.gemini/

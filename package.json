@@ -1,0 +1,25 @@
+{
+  "name": "annapurna-developers",
+  "version": "1.0.0",
+  "description": "Annapurna Developers - Ranchi's Premier Waterproofing & Civil Construction Website",
+  "private": true,
+  "keywords": [
+    "waterproofing",
+    "construction",
+    "renovation",
+    "ranchi",
+    "jharkhand"
+  ],
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "build": "echo 'Static site — no build step required'",
+    "deploy": "vercel --prod",
+    "preview": "vercel"
+  },
+  "homepage": "https://annapurnadevelopers.in",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "UNLICENSED"
+}
