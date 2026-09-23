@@ -740,6 +740,34 @@ button {
     margin-top: 10px;
 }
 
+/* Drawer Social Links Row */
+.drawer-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 12px 0 6px;
+}
+
+.drawer-social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(212, 160, 23, 0.12);
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--color-gold-light) !important;
+    transition: var(--transition-fast);
+}
+
+.drawer-social-link:hover {
+    background: var(--gold-gradient);
+    color: #07090C !important;
+    border-color: transparent;
+}
+
 /* ========== HERO SECTION (LUXURY CLIENT ARCHITECTURE) ========== */
 .section-hero {
     position: relative;
@@ -2987,13 +3015,8 @@ button {
     .hero-headline {
         font-size: 2.35rem;
     }
-    .signature-name {
-        font-size: 1.85rem;
-    }
     .hero-signature-overlay {
-        top: 14px;
-        right: 14px;
-        padding: 6px 12px;
+        display: none;
     }
     .quick-services-card {
         grid-template-columns: repeat(2, 1fr);
@@ -3125,5 +3148,19 @@ button {
     }
     .res-price {
         font-size: 1.9rem;
+    }
+    .hero-portrait-badge {
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+        padding: 8px 12px;
+        gap: 8px;
+    }
+    .portrait-status {
+        font-size: 0.7rem;
+        gap: 5px;
+    }
+    .portrait-verified {
+        font-size: 0.65rem;
     }
 }
