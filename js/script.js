@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (claimEstimateBtn) {
             const serviceName = selectedOption.text;
             const message = `Hello Annapurna Developers, I calculated an estimate on your website for ${serviceName}. Area: ${area} sq.ft. Estimated Cost: ₹${formattedPrice}. Please schedule a free site inspection to verify.`;
-            claimEstimateBtn.href = `https://wa.me/919608161738?text=${encodeURIComponent(message)}`;
+            claimEstimateBtn.href = `https://wa.me/916203364789?text=${encodeURIComponent(message)}`;
         }
     }
 
@@ -539,7 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Also construct WhatsApp fallback for convenience
                 const waText = `Hello Annapurna Developers, I submitted a request on your website. Name: ${name.value.trim()}, Phone: ${cleanPhone}, Location: ${location ? location.value.trim() : 'Ranchi'}, Service: ${service.value}, Message: ${message ? message.value.trim() : ''}`;
-                const waUrl = `https://wa.me/919608161738?text=${encodeURIComponent(waText)}`;
+                const waUrl = `https://wa.me/916203364789?text=${encodeURIComponent(waText)}`;
 
                 setTimeout(() => {
                     contactForm.reset();

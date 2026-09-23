@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE082" />
+      <stop offset="35%" stop-color="#E5B338" />
+      <stop offset="70%" stop-color="#C69320" />
+      <stop offset="100%" stop-color="#93680E" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer Triangle -->
+  <polygon points="50,10 92,85 8,85" fill="none" stroke="url(#goldGrad)" stroke-width="4.5" stroke-linejoin="round" />
+  
+  <!-- Subtle Inner Triangle Accent -->
+  <polygon points="50,18 84,80 16,80" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" stroke-opacity="0.4" stroke-linejoin="round" />
+
+  <!-- Water Droplet Inside Triangle -->
+  <path d="M50,32 C50,32 63,52 63,62 C63,69.5 57,75 50,75 C43,75 37,69.5 37,62 C37,52 50,32 50,32 Z" 
+        fill="url(#goldGrad)" />
+        
+  <!-- Droplet Highlight -->
+  <ellipse cx="46" cy="58" rx="2.5" ry="5.5" transform="rotate(-25 46 58)" fill="#FFF4D0" opacity="0.6" />
+  
+  <!-- Bottom Ripple Line -->
+  <path d="M40,78 Q50,81 60,78" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round" />
+</svg>
