@@ -771,15 +771,17 @@ button {
 /* ========== HERO SECTION (LUXURY ARCHITECTURAL CUTOUT) ========== */
 /*
  * Design: High-end obsidian & gold hero.
- * Left: SEO-rich headlines, kicker, shield badge, description, CTAs.
- * Right: Ayush Mukherjee transparent cutout (belt-cropped, no box),
- *        with subtle gold backlight, elegant cursive signature badge,
- *        and smooth bottom gradient fade into the page.
+ * Laptop/Desktop: Compact & balanced so the full section (including both CTA buttons
+ * and Ayush Mukherjee's complete upper body down to the belt) fits cleanly within
+ * the laptop viewport without scrolling or cutting off!
+ * Mobile: Preserved mobile-first layout with neat centered portrait.
  */
 
 .section-hero {
     position: relative;
-    min-height: 86vh;
+    /* Perfectly proportioned for laptop view below topbar + header */
+    min-height: calc(100vh - 125px);
+    max-height: 740px;
     display: flex;
     align-items: center;
     background:
@@ -787,7 +789,7 @@ button {
         radial-gradient(circle at 18% 75%, rgba(212, 160, 23, 0.08) 0%, transparent 48%),
         #07090C;
     overflow: hidden;
-    padding: 70px 0 60px;
+    padding: 24px 0 20px;
 }
 
 /* Ambient Backdrops */
@@ -818,14 +820,14 @@ button {
         linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
 }
 
-/* Hero 2-Column Container */
+/* Hero 2-Column Container on Laptop */
 .hero-container {
     position: relative;
     z-index: 5;
     width: 100%;
     display: grid;
-    grid-template-columns: 1.18fr 0.82fr;
-    gap: 40px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 32px;
     align-items: center;
 }
 
@@ -833,35 +835,35 @@ button {
 .hero-text-col {
     position: relative;
     z-index: 5;
-    max-width: 580px;
+    max-width: 540px;
 }
 
 .hero-kicker-strip {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.8125rem;
+    gap: 8px;
+    font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     color: var(--color-gold-light);
-    margin-bottom: 18px;
+    margin-bottom: 8px;
 }
 
 .kicker-line {
     display: inline-block;
-    width: 36px;
+    width: 28px;
     height: 1.5px;
     background: var(--gold-gradient);
 }
 
 .hero-headline {
     font-family: var(--font-heading);
-    font-size: clamp(2.7rem, 4.8vw, 4.3rem);
-    line-height: 1.04;
+    font-size: clamp(2.1rem, 3.2vw, 3.2rem);
+    line-height: 1.05;
     font-weight: 900;
     letter-spacing: -0.02em;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .hero-gold-title {
@@ -869,27 +871,27 @@ button {
     background: var(--gold-gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 22px rgba(212, 160, 23, 0.35));
+    filter: drop-shadow(0 2px 18px rgba(212, 160, 23, 0.3));
 }
 
 .hero-subhead {
     font-family: var(--font-body);
-    font-size: clamp(1.05rem, 1.9vw, 1.35rem);
+    font-size: clamp(0.92rem, 1.25vw, 1.08rem);
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     color: #FFFFFF;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .hero-shield-tag {
-    font-size: 1.05rem;
+    font-size: 0.92rem;
     font-weight: 600;
     color: var(--color-gold-light);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
 }
 
 .hero-shield-tag i {
@@ -897,22 +899,27 @@ button {
 }
 
 .hero-description {
-    font-size: 1.02rem;
+    font-size: 0.92rem;
     color: var(--color-text-secondary);
-    line-height: 1.76;
-    margin-bottom: 34px;
-    max-width: 520px;
+    line-height: 1.58;
+    margin-bottom: 18px;
+    max-width: 500px;
 }
 
 .hero-cta-cluster {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
     flex-wrap: wrap;
-    margin-bottom: 15px;
+    margin-bottom: 0;
 }
 
-/* Right Visual Column (Cutout - No Box Frame) */
+.hero-cta-cluster .btn {
+    padding: 11px 24px;
+    font-size: 0.9rem;
+}
+
+/* Right Visual Column (Laptop View - Well Proportioned, Never Giant) */
 .hero-visual-col {
     position: relative;
     z-index: 5;
@@ -924,16 +931,16 @@ button {
 .hero-figure-card {
     position: relative;
     width: 100%;
-    max-width: 380px;
+    max-width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Floating Signature Badge (Top Right of Figure) */
+/* Floating Signature Badge */
 .hero-signature-badge {
     position: absolute;
-    top: -8px;
+    top: -6px;
     right: 0;
     z-index: 10;
     text-align: right;
@@ -941,59 +948,74 @@ button {
     background: rgba(7, 9, 12, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 8px 18px;
+    padding: 6px 14px;
     border-radius: var(--radius-sm);
     border: 1px solid rgba(212, 160, 23, 0.28);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.65);
 }
 
 .hero-signature-badge .signature-name {
     font-family: var(--font-script);
-    font-size: 2.25rem;
+    font-size: 1.95rem;
     line-height: 1.1;
     color: var(--color-gold-light);
-    text-shadow: 0 0 12px rgba(212, 160, 23, 0.5);
+    text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
     display: block;
     white-space: nowrap;
 }
 
 .hero-signature-badge .signature-title {
     font-family: var(--font-body);
-    font-size: 0.65rem;
+    font-size: 0.58rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     color: var(--color-gold);
     display: block;
-    margin-top: 3px;
+    margin-top: 2px;
 }
 
-/* Image Blend Container with Bottom Fade */
+/* Image Blend with Bottom Gradient Fade */
 .hero-img-blend {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
-    /* Smooth gradient mask fades the belt cut into the dark background */
     mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
 }
 
-/* The Transparent Cutout Image - Attractive & Well-Proportioned */
+/* The Transparent Cutout Image - Scaled Elegantly for Laptop */
 .hero-engineer-cutout {
     display: block;
     width: 100%;
-    max-width: 340px;          /* Refined, not overly large */
+    max-width: 270px;          /* Perfectly scaled on laptop */
     height: auto;
-    max-height: 480px;         /* Proportional desktop height */
+    max-height: 380px;         /* Fits comfortably on laptop screen without cut-off */
     object-fit: contain;
     object-position: bottom center;
-    filter: drop-shadow(0 14px 34px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 25px rgba(212, 160, 23, 0.18));
+    filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 20px rgba(212, 160, 23, 0.16));
     transition: transform 0.5s var(--ease-spring);
 }
 
 .hero-figure-card:hover .hero-engineer-cutout {
     transform: scale(1.025);
+}
+
+/* Large Displays (>= 1440px) */
+@media (min-width: 1440px) {
+    .section-hero {
+        min-height: calc(100vh - 140px);
+        max-height: 780px;
+        padding: 36px 0 24px;
+    }
+    .hero-headline {
+        font-size: 3.4rem;
+    }
+    .hero-engineer-cutout {
+        max-width: 300px;
+        max-height: 420px;
+    }
 }
 
 /* ================================================================
@@ -1003,29 +1025,30 @@ button {
 /* --- Tablet 769px – 1024px --- */
 @media (min-width: 769px) and (max-width: 1024px) {
     .section-hero {
-        min-height: 75vh;
-        padding: 50px 0;
+        min-height: auto;
+        max-height: none;
+        padding: 40px 0;
     }
 
     .hero-container {
-        gap: 30px;
+        gap: 24px;
     }
 
     .hero-text-col {
-        max-width: 440px;
+        max-width: 420px;
     }
 
     .hero-headline {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
     }
 
     .hero-engineer-cutout {
-        max-width: 290px;
-        max-height: 420px;
+        max-width: 240px;
+        max-height: 340px;
     }
 
     .hero-signature-badge .signature-name {
-        font-size: 1.95rem;
+        font-size: 1.75rem;
     }
 }
 
@@ -1033,12 +1056,13 @@ button {
 @media (max-width: 768px) {
     .section-hero {
         min-height: auto;
-        padding: 40px 0 20px;
+        max-height: none;
+        padding: 36px 0 16px;
     }
 
     .hero-container {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 24px;
         text-align: center;
     }
 
@@ -1058,7 +1082,7 @@ button {
     .hero-description {
         margin-left: auto;
         margin-right: auto;
-        font-size: 0.95rem;
+        font-size: 0.92rem;
     }
 
     .hero-cta-cluster {
@@ -1067,18 +1091,17 @@ button {
 
     /* Visual Cutout on Mobile: Compact & Centered */
     .hero-visual-col {
-        margin-top: 10px;
+        margin-top: 8px;
         justify-content: center;
     }
 
     .hero-figure-card {
-        max-width: 260px;
+        max-width: 250px;
     }
 
-    /* "mobile view mein v fix karna hoga photo bhut bada lag rha hai" */
     .hero-engineer-cutout {
-        max-width: 210px;          /* Compact on mobile */
-        max-height: 280px;         /* Fits comfortably on phone viewport */
+        max-width: 200px;
+        max-height: 270px;
         margin: 0 auto;
     }
 
@@ -1087,35 +1110,35 @@ button {
         right: 50%;
         transform: translateX(50%);
         white-space: nowrap;
-        padding: 6px 14px;
+        padding: 5px 12px;
     }
 
     .hero-signature-badge .signature-name {
-        font-size: 1.65rem;
+        font-size: 1.55rem;
     }
 
     .hero-signature-badge .signature-title {
-        font-size: 0.58rem;
-        letter-spacing: 0.12em;
+        font-size: 0.55rem;
+        letter-spacing: 0.1em;
     }
 }
 
 /* --- Small Mobile <= 480px --- */
 @media (max-width: 480px) {
     .section-hero {
-        padding: 30px 0 15px;
+        padding: 28px 0 12px;
     }
 
     .hero-headline {
-        font-size: clamp(2.1rem, 8.5vw, 2.7rem);
+        font-size: clamp(2rem, 8vw, 2.5rem);
     }
 
     .hero-subhead {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .hero-shield-tag {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .hero-cta-cluster {
@@ -1128,17 +1151,16 @@ button {
     }
 
     .hero-figure-card {
-        max-width: 220px;
+        max-width: 210px;
     }
 
-    /* Smallest screens: very neat, never over-tall */
     .hero-engineer-cutout {
-        max-width: 180px;
-        max-height: 240px;
+        max-width: 170px;
+        max-height: 230px;
     }
 
     .hero-signature-badge .signature-name {
-        font-size: 1.45rem;
+        font-size: 1.4rem;
     }
 }
 /* ========== QUICK SERVICES WIREFRAME STRIP (6 ITEMS) ========== */
@@ -1303,7 +1325,10 @@ button {
     overflow: hidden;
     border: 1px solid var(--color-border-gold);
     box-shadow: var(--shadow-luxury);
-    height: 380px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 600 / 340;
+    max-height: 380px;
     background: #0E1218;
 }
 
@@ -1311,21 +1336,17 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    display: block;
     transition: transform 0.6s ease;
 }
 
 .about-visual-frame:hover .about-roller-img {
-    transform: scale(1.04);
+    transform: scale(1.03);
 }
 
 .about-visual-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(7, 9, 12, 0.2) 0%, rgba(7, 9, 12, 0.88) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 34px;
+    display: none;
 }
 
 .about-overlay-kicker {
@@ -2879,49 +2900,7 @@ button {
     gap: 12px;
 }
 
-/* ========== FIXED MOBILE CONVERSION BAR ========== */
-.mobile-action-bar {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(7, 9, 12, 0.96);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-top: 1px solid var(--color-border-gold);
-    padding: 8px 12px;
-    z-index: 9990;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8);
-}
 
-.mobile-action-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 10px;
-    border-radius: var(--radius-sm);
-    font-size: 0.85rem;
-    font-weight: 700;
-}
-
-.call-action {
-    background: var(--gold-gradient);
-    color: #07090C !important;
-}
-
-.whatsapp-action {
-    background: #25D366;
-    color: #FFFFFF !important;
-}
-
-.book-action {
-    background: #141924;
-    border: 1px solid var(--color-border-gold);
-    color: var(--color-gold-light) !important;
-}
 
 /* ========== FLOATING WHATSAPP BUTTON ========== */
 .floating-whatsapp {
@@ -3398,25 +3377,56 @@ button {
         gap: 10px;
         text-align: center;
     }
-    .mobile-action-bar {
-        display: flex;
-        gap: 8px;
-    }
     body {
-        padding-bottom: 60px;
+        padding-bottom: 0 !important;
     }
     .floating-whatsapp {
-        bottom: 74px;
-        right: 16px;
+        bottom: 22px;
+        right: 18px;
         width: 50px;
         height: 50px;
         font-size: 24px;
     }
     .back-to-top {
-        bottom: 136px;
-        right: 18px;
+        bottom: 82px;
+        right: 20px;
         width: 42px;
         height: 42px;
+    }
+    /* About Us Mobile Fix */
+    .about-split-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+    }
+    .about-visual-frame {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 600 / 340;
+    }
+    .about-content-card h3 {
+        font-size: clamp(1.4rem, 5.5vw, 1.85rem);
+        margin-bottom: 14px;
+    }
+    .about-content-card p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        margin-bottom: 22px;
+    }
+    .about-pillars-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+        margin-bottom: 24px;
+    }
+    .about-pillar-badge {
+        padding: 12px 14px;
+    }
+    .about-action .btn {
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+        padding: 13px 18px;
+        font-size: 0.88rem;
     }
 }
 
