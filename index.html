@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" style="background-color:#07090C;">
 <head>
     <meta charset="UTF-8">
@@ -242,27 +242,44 @@
         </div>
     </aside>
 
-    <!-- ========== HERO SECTION (EXACT CLIENT DESIGN) ========== -->
+    <!-- ========== HERO SECTION (CINEMATIC FULL-BLEED) ========== -->
     <section id="home" class="hero section-hero">
-        <div class="hero-backdrop">
-            <div class="hero-gold-glow"></div>
-            <div class="hero-grid-pattern"></div>
+        <!-- Full-bleed background photo: person on right side, no box frame -->
+        <div class="hero-bg-photo" aria-hidden="true">
+            <img src="images/ayush_hero_bg.png" alt="" class="hero-bg-img" fetchpriority="high">
+            <!-- Dark gradient overlay covering left 60% so text is readable -->
+            <div class="hero-overlay-left"></div>
+            <!-- Bottom fade for smooth transition -->
+            <div class="hero-overlay-bottom"></div>
         </div>
 
+        <!-- Subtle architectural grid texture -->
+        <div class="hero-grid-pattern" aria-hidden="true"></div>
+
+        <!-- Cursive signature floating over top-right of photo -->
+        <div class="hero-signature-overlay" aria-hidden="true">
+            <span class="signature-name">Ayush Mukherjee</span>
+            <span class="signature-title">Civil Engineer &amp; Contractor</span>
+        </div>
+
+        <!-- Main content: text sits on left, photo visible on right -->
         <div class="container hero-container">
-            <!-- Left Hero Content -->
             <div class="hero-text-col" data-aos="fade-up" data-aos-duration="900">
+
+                <!-- Kicker line -->
                 <div class="hero-kicker-strip">
                     <span>We Stop Leakages Before They Stop You</span>
                     <span class="kicker-line"></span>
                 </div>
 
+                <!-- Main headline -->
                 <h1 class="hero-headline">
                     <span class="hero-gold-title">ANNAPURNA</span>
                     <span class="hero-gold-title">DEVELOPERS</span>
                 </h1>
 
                 <div class="hero-subhead">Waterproofing &amp; Civil Works</div>
+
                 <div class="hero-shield-tag">
                     <i class="fas fa-shield-halved"></i>
                     <span>Your Shield Against Water Leakage</span>
@@ -281,35 +298,6 @@
                         <i class="fas fa-calendar-check"></i>
                         <span>Book Site Visit</span>
                     </a>
-                </div>
-            </div>
-
-            <!-- Right Hero Visual Showcase: Ayush Mukherjee with Cursive Signature -->
-            <div class="hero-visual-col" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="150">
-                <div class="hero-portrait-frame">
-                    <!-- High-Resolution Engineer Portrait -->
-                    <picture>
-                        <source srcset="images/ayush_mukherjee.webp" type="image/webp">
-                        <img src="images/ayush_mukherjee.jpg" alt="Ayush Mukherjee - Civil Engineer and Contractor at Annapurna Developers Ranchi" class="hero-engineer-img">
-                    </picture>
-
-                    <!-- Gold Calligraphic Signature Overlay in Top Right -->
-                    <div class="hero-signature-overlay">
-                        <span class="signature-name">Ayush Mukherjee</span>
-                        <span class="signature-title">Civil Engineer &amp; Contractor</span>
-                    </div>
-
-                    <!-- Verified Bottom Pill -->
-                    <div class="hero-portrait-badge">
-                        <div class="portrait-status">
-                            <span class="live-dot"></span>
-                            <span>On-Site Supervision • Ranchi</span>
-                        </div>
-                        <div class="portrait-verified">
-                            <i class="fas fa-certificate text-gold"></i>
-                            <span>15-Year Warranty</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
